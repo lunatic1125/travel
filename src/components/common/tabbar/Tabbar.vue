@@ -18,8 +18,8 @@ export default {
   right: 0;
   bottom: 0;
 
-  height: 49px;
+  height: 3.06rem;
 
-  box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 -0.06rem 0.25rem rgba(0, 0, 0, 0.08);
 }
 </style>

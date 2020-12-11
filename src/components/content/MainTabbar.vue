@@ -52,8 +52,8 @@
 </template>
 
 <script>
-import Tabbar from "components/common/Tabbar.vue";
-import TabbarItem from "components/common/TabbarItem.vue";
+import Tabbar from "components/common/tabbar/Tabbar.vue";
+import TabbarItem from "components/common/tabbar/TabbarItem.vue";
 export default {
   name: "MainTabbar",
   components: {

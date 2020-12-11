@@ -1,13 +1,22 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+// 第三方插件解决移动端300毫秒延迟问题
+import fastClick from 'fastclick'
+// fastClick自带方法
+fastClick.attach(document.body)
+
+//swiper插件使用 
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+Vue.use(VueAwesomeSwiper)
+import 'swiper/dist/css/swiper.css'
 
 
 Vue.config.productionTip = false
-
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  VueAwesomeSwiper,
   render: h => h(App)
 })
