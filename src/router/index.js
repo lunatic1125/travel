@@ -8,7 +8,12 @@ const Tourist = () => import('views/tourist/Tourist.vue')
 const Profile = () => import('views/profile/Profile.vue')
 
 Vue.use(Router)
-
+// npm i vue-router@3.1.1 -S 同时加上以下代码，防止重复点击报错
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+//----------------------end----------------------------------
 const routes = [
   { path: '/', redirect: '/home' },
   // name: 'HelloWorld',}

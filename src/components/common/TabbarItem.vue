@@ -1,14 +1,18 @@
 <template>
   <div class="tabbar-item" @click="btnClick" :path="path">
+    <!-- 默认icon -->
     <div v-if="!isActive">
       <slot name="item-icon" />
     </div>
+    <!-- 点击状态icon -->
     <div v-else>
       <slot name="item-icon-active" />
     </div>
+    <!-- 中间icon -->
     <div>
       <slot name="item-center" />
     </div>
+    <!-- 文字 -->
     <div :style="activeStyle">
       <slot></slot>
     </div>
@@ -42,7 +46,6 @@ export default {
   methods: {
     btnClick() {
       this.$router.push(this.path);
-      console.log(this.path);
     },
   },
 };
