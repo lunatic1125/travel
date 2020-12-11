@@ -4,7 +4,7 @@
     <search></search>
     <banner></banner>
     <icons></icons>
-    <h2>我也是不</h2>
+    <list></list>
   </div>
 </template>
 
@@ -13,6 +13,7 @@ import HomeNavbar from "./homecompents/HomeNavbar";
 import Search from "./homecompents/Search";
 import Banner from "./homecompents/Banner";
 import Icons from "./homecompents/Icons";
+import List from "./homecompents/List";
 
 export default {
   name: "Home",
@@ -21,6 +22,7 @@ export default {
     Search,
     Banner,
     Icons,
+    List,
   },
 };
 </script>

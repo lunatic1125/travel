@@ -15,7 +15,7 @@
 <script>
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
-  name: "Swiper",
+  name: "Banner",
   data() {
     return {
       banners: [
