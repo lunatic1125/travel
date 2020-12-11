@@ -4,7 +4,8 @@
     <search></search>
     <banner></banner>
     <icons></icons>
-    <list></list>
+    <sell-list></sell-list>
+    <recommend></recommend>
   </div>
 </template>
 
@@ -13,7 +14,8 @@ import HomeNavbar from "./homecompents/HomeNavbar";
 import Search from "./homecompents/Search";
 import Banner from "./homecompents/Banner";
 import Icons from "./homecompents/Icons";
-import List from "./homecompents/List";
+import SellList from "./homecompents/SellList";
+import Recommend from "./homecompents/Recommend.vue";
 
 export default {
   name: "Home",
@@ -22,7 +24,8 @@ export default {
     Search,
     Banner,
     Icons,
-    List,
+    SellList,
+    Recommend,
   },
 };
 </script>

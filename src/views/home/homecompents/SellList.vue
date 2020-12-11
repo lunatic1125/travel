@@ -1,6 +1,6 @@
 <template>
-  <div class="list">
-    <div class="list-title">
+  <div class="sell">
+    <div class="sell-title">
       <span>本周热销</span>
     </div>
     <div class="lists">
@@ -23,7 +23,7 @@
 <script>
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
-  name: "List",
+  name: "SellList",
   data() {
     return {
       proList: [
@@ -66,23 +66,23 @@ export default {
 </script>
 
 <style scoped>
-.list {
+.sell {
   width: 100%;
-  padding: 0 0.94rem;
+  padding: 0 0.94rem 0.5rem;
 }
-.list-title {
+.sell-title {
   height: 2.38rem;
   line-height: 2.38rem;
   /* background-color: #666; */
 }
-.list-title::before {
+.sell-title::before {
   content: "";
   display: inline-block;
   width: 0.19rem;
   height: 0.63rem;
   background-color: var(--color-tink);
 }
-.list-title span {
+.sell-title span {
   font-size: 1.06rem;
   margin-left: 0.5rem;
 }
