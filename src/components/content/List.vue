@@ -1,7 +1,11 @@
-<template></template>
+<template>
+  <div class="list"></div>
+</template>
 
 <script>
-export default {};
+export default {
+  name: "List",
+};
 </script>
 
 <style>

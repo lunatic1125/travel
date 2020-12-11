@@ -3,7 +3,8 @@
     <home-navbar></home-navbar>
     <search></search>
     <banner></banner>
-    <king-icons />
+    <icons></icons>
+    <h2>我也是不</h2>
   </div>
 </template>
 
@@ -11,7 +12,7 @@
 import HomeNavbar from "./homecompents/HomeNavbar";
 import Search from "./homecompents/Search";
 import Banner from "./homecompents/Banner";
-import KingIcons from "./homecompents/KingIcons";
+import Icons from "./homecompents/Icons";
 
 export default {
   name: "Home",
@@ -19,7 +20,7 @@ export default {
     HomeNavbar,
     Search,
     Banner,
-    KingIcons,
+    Icons,
   },
 };
 </script>
