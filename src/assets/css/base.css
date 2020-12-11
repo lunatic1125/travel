@@ -1,4 +1,6 @@
 @import './normalize.css';
+/* 实现手机端1px问题 */
+@import './border.css';
 
 /* :root -> 获取根元素html */
 :root {
