@@ -16,7 +16,7 @@ export default {
 
 <style scoped>
 .banner {
-  margin: 0 0.94rem;
+  margin: 0 0.94rem 0.44rem;
   width: 21.56rem;
   height: 10rem;
   /* 边角4px */

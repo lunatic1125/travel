@@ -2,7 +2,8 @@
   <div class="home">
     <home-navbar></home-navbar>
     <search></search>
-    <banner />
+    <banner></banner>
+    <king-icons />
   </div>
 </template>
 
@@ -10,6 +11,7 @@
 import HomeNavbar from "./homecompents/HomeNavbar";
 import Search from "./homecompents/Search";
 import Banner from "./homecompents/Banner";
+import KingIcons from "./homecompents/KingIcons";
 
 export default {
   name: "Home",
@@ -17,9 +19,9 @@ export default {
     HomeNavbar,
     Search,
     Banner,
+    KingIcons,
   },
 };
-Banner;
 </script>
 
 <style>

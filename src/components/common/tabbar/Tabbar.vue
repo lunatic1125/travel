@@ -10,7 +10,7 @@ export default {
 };
 </script>
 
-<style>
+<style >
 .tabbar {
   display: flex;
   position: fixed;
