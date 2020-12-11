@@ -9,7 +9,7 @@
     <div>
       <slot name="item-center" />
     </div>
-    <div :class="{ active: isActive }">
+    <div :style="activeStyle">
       <slot></slot>
     </div>
   </div>
@@ -18,12 +18,27 @@
 <script>
 export default {
   name: "TabbarItem",
-  props: ["path"],
+  props: {
+    path: String,
+    isActiveColor: {
+      type: String,
+      default: "#46cdcf",
+    },
+  },
   data() {
     return {
-      isActive: false,
+      // isActive: false,
     };
   },
+  computed: {
+    isActive() {
+      return this.$route.path.indexOf(this.path) != -1;
+    },
+    activeStyle() {
+      return this.isActive ? { color: this.isActiveColor } : {};
+    },
+  },
+
   methods: {
     btnClick() {
       this.$router.push(this.path);
@@ -62,7 +77,7 @@ export default {
   width: 100%;
   height: 100%;
 }
-.active {
+/* .active {
   color: var(--color-tink);
-}
+} */
 </style>
