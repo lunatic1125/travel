@@ -19,7 +19,7 @@ export default {
   bottom: 0;
 
   height: 3.06rem;
-
+  background-color: #fff;
   box-shadow: 0 -0.06rem 0.25rem rgba(0, 0, 0, 0.08);
 }
 </style>

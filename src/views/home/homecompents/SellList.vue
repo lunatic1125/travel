@@ -123,4 +123,9 @@ export default {
   margin: 0 auto;
   background-color: #fff;
 }
+.item-center p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 </style>

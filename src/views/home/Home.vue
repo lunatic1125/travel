@@ -6,6 +6,7 @@
     <icons></icons>
     <sell-list></sell-list>
     <recommend></recommend>
+    <end></end>
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import Banner from "./homecompents/Banner";
 import Icons from "./homecompents/Icons";
 import SellList from "./homecompents/SellList";
 import Recommend from "./homecompents/Recommend.vue";
+import End from "../../components/content/End.vue";
 
 export default {
   name: "Home",
@@ -26,9 +28,13 @@ export default {
     Icons,
     SellList,
     Recommend,
+    End,
   },
 };
 </script>
 
 <style>
+.home {
+  padding-bottom: 2.75rem;
+}
 </style>
