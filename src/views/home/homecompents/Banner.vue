@@ -1,7 +1,8 @@
 <template>
   <div class="banner">
     <!-- <swiper></swiper> -->
-    <swiper :options="swiperOption">
+    <!-- 只有当访问到数据后在生成swiper 即banners数据不为空 -->
+    <swiper :options="swiperOption" v-if="showSwiper">
       <!-- slides -->
       <swiper-slide :key="item.id" v-for="item in banners">
         <img :src="item.imgUrl" alt="" />
@@ -16,17 +17,25 @@
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
   name: "Banner",
+  props: {
+    banners: Array,
+  },
   data() {
     return {
-      banners: [
-        { id: "01", imgUrl: require("assets/image/banner/banner1@2x.png") },
-        { id: "02", imgUrl: require("assets/image/banner/banner2@2x.png") },
-      ],
+      // banners: [
+      //   { id: "01", imgUrl: require("assets/image/banner/banner1@2x.png") },
+      //   { id: "02", imgUrl: require("assets/image/banner/banner2@2x.png") },
+      // ],
       swiperOption: {
         pagination: ".swiper-pagination", // 默认点不显示
         loop: true, //可以前后切换下一张
       },
     };
+  },
+  computed: {
+    showSwiper() {
+      return this.banners.length;
+    },
   },
   components: {
     swiper,

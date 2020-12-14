@@ -24,34 +24,11 @@
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
   name: "SellList",
+  props: {
+    proList: Array,
+  },
   data() {
     return {
-      proList: [
-        {
-          id: "01",
-          title: "马尔代夫",
-          message: "亲子优选/水上娱乐",
-          proSrc: require("assets/image/updata/1.png"),
-        },
-        {
-          id: "02",
-          title: "曼谷普吉",
-          message: "7天6晚自由行",
-          proSrc: require("assets/image/updata/2.png"),
-        },
-        {
-          id: "03",
-          title: "巴厘岛",
-          message: "婚礼蜜月旅行",
-          proSrc: require("assets/image/updata/3.png"),
-        },
-        {
-          id: "04",
-          title: "毛里求斯",
-          message: "亲子优选/水上娱乐",
-          proSrc: require("assets/image/updata/4.png"),
-        },
-      ],
       swiperOption: {
         slidesPerView: 2.5,
         spaceBetween: 30,

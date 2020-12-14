@@ -15,36 +15,11 @@
 import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
   name: "Icons",
+  props: {
+    iconList: Array,
+  },
   data() {
-    return {
-      iconList: [
-        {
-          id: "01",
-          iconSrc: require("assets/image/icons/photo@2x.png"),
-          iconText: "风光摄影",
-        },
-        {
-          id: "02",
-          iconSrc: require("assets/image/icons/drive@2x.png"),
-          iconText: "户外自驾",
-        },
-        {
-          id: "03",
-          iconSrc: require("assets/image/icons/family@2x.png"),
-          iconText: "亲子教育",
-        },
-        {
-          id: "04",
-          iconSrc: require("assets/image/icons/business@2x.png"),
-          iconText: "商务团建",
-        },
-        // {
-        //   id: "05",
-        //   iconSrc: require("assets/image/icons/business@2x.png"),
-        //   iconText: "商务团建",
-        // },
-      ],
-    };
+    return {};
   },
   components: {
     swiper,
