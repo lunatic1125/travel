@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <home-navbar></home-navbar>
-    <search></search>
+    <router-link to="/city">
+      <search-btn></search-btn>
+    </router-link>
     <banner :banners="banners"></banner>
     <icons :iconList="iconList"></icons>
     <sell-list :proList="proList"></sell-list>
@@ -11,12 +13,12 @@
 </template>
 
 <script>
-import HomeNavbar from "./homecompents/HomeNavbar";
-import Search from "./homecompents/Search";
-import Banner from "./homecompents/Banner";
-import Icons from "./homecompents/Icons";
-import SellList from "./homecompents/SellList";
-import Recommend from "./homecompents/Recommend.vue";
+import HomeNavbar from "./components/HomeNavbar";
+import SearchBtn from "./components/SearchBtn";
+import Banner from "./components/Banner";
+import Icons from "./components/Icons";
+import SellList from "./components/SellList";
+import Recommend from "./components/Recommend.vue";
 import End from "../../components/content/End.vue";
 import { request } from "../../network/request";
 // import axios from "axios";
@@ -25,7 +27,7 @@ export default {
   name: "Home",
   components: {
     HomeNavbar,
-    Search,
+    SearchBtn,
     Banner,
     Icons,
     SellList,
@@ -51,7 +53,7 @@ export default {
     // this.getHomeInfo();
     request({ url: "/api/index.json" }).then((res) => {
       res = res.data;
-      console.log(res);
+      // console.log(res);
       if (res.ret && res.data) {
         const data = res.data;
         this.banners = data.banners;

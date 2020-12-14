@@ -1,5 +1,5 @@
 <template>
-  <div class="search">
+  <div class="search-btn">
     <div>
       <i class="iconfont">&#xe60f;</i>
       <span>搜索目的地/攻略</span>
@@ -9,12 +9,12 @@
 
 <script>
 export default {
-  name: "Search",
+  name: "SearchBtn",
 };
 </script>
 
 <style>
-.search {
+.search-btn {
   /* 搜索框60px */
   height: 1.88rem;
   margin: 0 0.94rem 0.44rem;

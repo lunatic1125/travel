@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import TripNavbar from "./tripcomponents/TripNavbar";
+import TripNavbar from "./components/TripNavbar";
 export default {
   name: "Trip",
   components: {

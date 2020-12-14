@@ -29,7 +29,7 @@ export default {
 <style>
 .list-item {
   float: left;
-  width: 13.44rem;
+  width: 12.44rem;
   padding: 0.63rem;
 }
 .list-item h4 {

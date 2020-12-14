@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 const Home = () => import('views/home/Home.vue')
+const City = () => import('views/city/City.vue')
 const Trip = () => import('views/trip/Trip.vue')
 const Travel = () => import('views/travel/Travel.vue')
 const Tourist = () => import('views/tourist/Tourist.vue')
@@ -18,12 +19,13 @@ Router.prototype.push = function push(location) {
 
 const routes = [
   { path: '/', redirect: '/home' },
-  // name: 'HelloWorld',}
-  { path: '/home', component: Home },
+  { path: '/home', component: Home, },
   { path: '/trip', component: Trip },
   { path: '/travel', component: Travel },
   { path: '/tourist', component: Tourist },
   { path: '/profile', component: Profile },
+  { path: '/city', component: City },
+
 ]
 export default new Router({
   routes,

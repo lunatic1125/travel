@@ -17,6 +17,5 @@ export default {
   height: 2.75rem;
   /* 内边距5px */
   padding: 0 0.31rem;
-  /* background-color: #f8f8f8; */
 }
 </style>

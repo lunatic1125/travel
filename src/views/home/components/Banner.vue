@@ -46,24 +46,21 @@ export default {
 
 <style scoped>
 .banner {
-  margin: 0 0.94rem 0.44rem;
-  width: 21.56rem;
-  height: 10rem;
+  padding: 0 0.94rem;
+  margin-bottom: 0.44rem;
   /* 边角4px */
   border-radius: 0.25rem;
   overflow: hidden;
-  background-color: #e8e8e8;
 }
 /* 穿透 在其他页面也起效 不受scoped限制 >>> */
 .swiper-container >>> .swiper-pagination-bullet {
-  width: 10px;
-  height: 5px;
-  border-radius: 2px;
+  width: 0.63rem;
+  height: 0.31rem;
+  border-radius: 0.13rem;
 }
 .swiper-container >>> .swiper-pagination-bullet-active {
   background-color: #fff !important;
 }
-
 .swiper-container img {
   width: 100%;
 }

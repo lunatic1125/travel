@@ -2,21 +2,13 @@
   <navbar>
     <navbar-item>
       <template v-slot:left>
-        <a href="javascript:;">&#xe610;</a>
+        <h1>Travel</h1>
       </template>
-    </navbar-item>
-    <navbar-item>
-      <template v-slot:center>
-        <h2>行程</h2>
-      </template>
-    </navbar-item>
-    <navbar-item>
-      <template v-slot:right>
-        <a href="javascript:;">&#xe60f;</a>
-      </template>
+      <template v-slot:right><span>&#xe60d;</span></template>
     </navbar-item>
   </navbar>
 </template>
+
 <script>
 import Navbar from "components/common/navbar/Navbar.vue";
 import NavbarItem from "components/common/navbar/NavbarItem.vue";
