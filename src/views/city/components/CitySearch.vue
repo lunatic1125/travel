@@ -1,16 +1,80 @@
 <template>
-  <div class="search-city">
-    <div>
-      <input type="text" placeholder="搜索目的地/攻略" />
-      <button class="iconfont">&#xe60f;</button>
-      <!-- <span>搜索目的地/攻略</span> -->
+  <div>
+    <div class="search-city">
+      <input type="text" v-model="keyword" placeholder="搜索目的地/攻略" />
+      <!-- <button class="iconfont">&#xe60f;</button> -->
+    </div>
+    <div class="search-content" ref="wrapper" v-show="keyword">
+      <ul class="search-keyword">
+        <li
+          v-for="item in list"
+          :key="item.cityCode"
+          @click="changeCity(item.n)"
+        >
+          {{ item.n }}
+        </li>
+        <li v-show="lisnodata">没有找到匹配数据</li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
+import BScroll from "better-scroll";
 export default {
   name: "CitySearch",
+  props: {
+    city_list: Array,
+  },
+  data() {
+    return {
+      keyword: "",
+      timer: null,
+      list: [],
+    };
+  },
+  methods: {
+    changeCity(city) {
+      this.$store.commit("changeCity", city);
+      this.keyword = "";
+      return;
+    },
+  },
+  computed: {
+    lisnodata() {
+      return !this.list.length;
+    },
+  },
+  watch: {
+    keyword() {
+      if (this.timer) {
+        clearTimeout(this.timer);
+      }
+      if (!this.keyword) {
+        this.list = [];
+        return;
+      }
+      this.timer = setTimeout(() => {
+        const result = [];
+        this.city_list.forEach((item) => {
+          // console.log(item["n"]);
+          item["n"].forEach((value) => {
+            // console.log(i);
+            if (
+              value.c.indexOf(this.keyword) != -1 ||
+              value.n.indexOf(this.keyword) != -1
+            ) {
+              result.push(value);
+            }
+          });
+        });
+        this.list = result;
+      }, 100);
+    },
+  },
+  mounted() {
+    this.scroll = new BScroll(this.$refs.wrapper);
+  },
 };
 </script>
 
@@ -25,11 +89,10 @@ export default {
   font-size: 0.88rem;
   text-align: center;
   line-height: 1.88rem;
-  color: #b3b3b3;
 
   border-radius: 0.94rem;
   background-color: #f5f6fa;
-  z-index: 8;
+  z-index: 6;
 }
 .search-city input {
   position: absolute;
@@ -38,14 +101,32 @@ export default {
   width: 280px;
   padding: 0 0.63rem;
   height: 1.63rem;
+  text-align: center;
   background-color: transparent;
 }
-.search-city button {
+/* .search-city button {
   position: absolute;
   top: 0;
   right: 0;
   padding: 6px 16px;
   background-color: var(--color-tink);
   color: #fff;
+} */
+.search-content {
+  overflow: hidden;
+  position: absolute;
+  top: 5.06rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f5f6fa;
+  z-index: 1;
+}
+.search-keyword li {
+  padding: 0 0.94rem;
+  font-size: 0.88rem;
+  line-height: 1.88rem;
+  border-bottom: 0.06rem solid #e6e6e6;
+  background-color: #fff;
 }
 </style>

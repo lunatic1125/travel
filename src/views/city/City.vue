@@ -1,9 +1,16 @@
 <template>
   <div class="city">
     <city-navbar></city-navbar>
-    <city-search></city-search>
-    <city-list :hot_citys="hot_citys" :city_list="city_list"></city-list>
-    <alphabet :classify_list="classify_list"></alphabet>
+    <city-search :city_list="city_list"></city-search>
+    <city-list
+      :hot_citys="hot_citys"
+      :city_list="city_list"
+      :handelIndex="handelIndex"
+    ></city-list>
+    <alphabet
+      :classify_list="classify_list"
+      @changeInfo="changeInfo"
+    ></alphabet>
   </div>
 </template>
 
@@ -27,11 +34,12 @@ export default {
       hot_citys: [],
       city_list: [],
       classify_list: [],
+      handelIndex: "",
     };
   },
   methods: {
     getCityInfo() {
-      request({ url: "/api/word-city-list.json" }).then((res) => {
+      request({ url: "/api/china-city-list.json" }).then((res) => {
         res = res.data;
         if (res.ret && res.data) {
           const data = res.data;
@@ -40,6 +48,9 @@ export default {
           this.classify_list = data.classify_list;
         }
       });
+    },
+    changeInfo(inner) {
+      this.handelIndex = inner;
     },
   },
   mounted() {

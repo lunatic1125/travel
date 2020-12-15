@@ -4,7 +4,7 @@
       <template v-slot:left>
         <h1>Travel</h1>
       </template>
-      <template v-slot:right><span>&#xe60d;</span></template>
+      <template v-slot:right> <span>&#xe60d;</span></template>
     </navbar-item>
   </navbar>
 </template>

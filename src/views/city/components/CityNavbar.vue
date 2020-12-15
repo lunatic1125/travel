@@ -7,7 +7,7 @@
             <span>&#xe622;</span>
           </router-link>
         </template>
-        <template v-slot:center>目的地选择</template>
+        <template v-slot:center>城市选择</template>
       </navbar-item>
     </navbar>
   </div>
@@ -25,4 +25,7 @@ export default {
 </script>
 
 <style scoped>
+.citynavbar {
+  z-index: 10;
+}
 </style>

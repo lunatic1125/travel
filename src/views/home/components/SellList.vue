@@ -60,7 +60,7 @@ export default {
   background-color: var(--color-tink);
 }
 .sell-title span {
-  font-size: 1.06rem;
+  font-size: 0.94rem;
   margin-left: 0.5rem;
 }
 .lists {

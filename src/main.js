@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
 // 第三方插件解决移动端300毫秒延迟问题
 import fastClick from 'fastclick'
 // fastClick自带方法
@@ -17,6 +18,7 @@ Vue.config.productionTip = false
 new Vue({
   el: '#app',
   router,
+  store,
   VueAwesomeSwiper,
   render: h => h(App)
 })

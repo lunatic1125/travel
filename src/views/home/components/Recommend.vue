@@ -42,7 +42,7 @@ export default {
   background-color: var(--color-tink);
 }
 .recommend span {
-  font-size: 1.06rem;
+  font-size: 0.94rem;
   padding: 0.5rem;
   margin-right: 1.13rem;
 }

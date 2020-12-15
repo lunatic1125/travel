@@ -1,20 +1,35 @@
 <template>
   <div class="search-list" ref="wrapper">
     <div class="content" ref="content">
-      <!-- 最近搜索 -->
+      <!-- 当前城市 -->
       <div class="area">
-        <div class="title">最近搜索</div>
+        <div class="area-title">当前城市</div>
         <div class="history">
-          <span v-for="item in hot_citys" :key="item.cityCode">{{
-            item.n
-          }}</span>
+          <span class="active">{{ this.$store.state.city }}</span>
+        </div>
+      </div>
+      <!-- 热门城市 -->
+      <div class="area">
+        <div class="area-title">热门搜索</div>
+        <div class="history">
+          <span
+            v-for="item in hot_citys"
+            :key="item.cityCode"
+            @click="changeCity(item.n)"
+            >{{ item.n }}
+          </span>
         </div>
       </div>
       <!-- 字母列表 -->
-      <div class="area" v-for="item in city_list" :key="item.cityCode">
-        <div class="title">{{ item.k }}</div>
+      <div
+        class="area"
+        v-for="item in city_list"
+        :key="item.cityCode"
+        :ref="item.k"
+      >
+        <div class="area-title">{{ item.k }}</div>
         <ul class="letter-list" v-for="list in item.n" :key="list.cityCode">
-          <li>{{ list.n }}</li>
+          <li @click="changeCity(list.n)">{{ list.n }}</li>
         </ul>
       </div>
     </div>
@@ -28,14 +43,33 @@ export default {
   props: {
     hot_citys: Array,
     city_list: Array,
+    handelIndex: String,
+  },
+  watch: {
+    handelIndex() {
+      // 监听点击字母的变化
+      if (this.handelIndex) {
+        const element = this.$refs[this.handelIndex][0];
+        //滚动到的目标元素
+        this.scroll.scrollToElement(element);
+      }
+    },
+  },
+  methods: {
+    InitTabScroll() {
+      this.scroll = new BScroll(this.$refs.wrapper, {
+        click: true,
+      });
+    },
+    changeCity(city) {
+      this.$store.commit("changeCity", city);
+      this.scroll.scrollToElement(0);
+    },
   },
   mounted() {
-    //第一个参数是滚动元素的外盒子 第二个参数是配置项
-    this.scroll = new BScroll(this.$refs.wrapper, {
-      // click: true,
+    this.$nextTick(() => {
+      this.InitTabScroll();
     });
-    console.log(this.scroll);
-    console.log(this.scroll.scrollerHeight);
   },
 };
 </script>
@@ -51,16 +85,15 @@ export default {
   bottom: 0;
 }
 .content {
-  padding-right: 1.25rem;
-  padding-bottom: 80px;
+  padding-right: 1rem;
+  padding-bottom: 5rem;
 }
-.title {
-  font-size: 1rem;
-  font-weight: 600;
+.area-title {
+  font-size: 0.94rem;
+  font-weight: 500;
   height: 2.38rem;
   line-height: 2.38rem;
 }
-
 .history {
   padding: 0.13rem 0;
 }
@@ -71,6 +104,10 @@ export default {
   font-size: 0.88rem;
   border-radius: 0.69rem;
   background-color: #f5f6fa;
+}
+.history .active {
+  background-color: var(--color-tink);
+  color: #fff;
 }
 .letter-list li {
   font-size: 0.88rem;
