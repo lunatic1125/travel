@@ -15,11 +15,12 @@ export default {
 <style>
 .list {
   position: relative;
-  height: 6.81rem;
+  height: 100px;
   margin-bottom: 0.63rem;
   border-radius: 0.25rem;
   overflow: hidden;
   box-shadow: 0 0.06rem 0.25rem rgba(0, 0, 0, 0.08);
+  background-color: #fff;
 }
 
 .list .like {
@@ -28,6 +29,5 @@ export default {
   right: 0;
   font-size: 1.13rem;
   padding: 0.25rem;
-  z-index: 6;
 }
 </style>

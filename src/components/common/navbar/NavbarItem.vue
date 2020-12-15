@@ -25,7 +25,7 @@ export default {
 }
 .item-left,
 .item-right {
-  width: 5rem;
+  width: 7.5rem;
   /* icon大小44px */
   font-size: 1.38rem;
   line-height: 2.75rem;

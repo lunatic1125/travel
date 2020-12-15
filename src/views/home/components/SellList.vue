@@ -5,11 +5,11 @@
     </div>
     <div class="lists">
       <swiper :options="swiperOption">
-        <swiper-slide v-for="item in proList" :key="item.id">
+        <swiper-slide v-for="item in hotList" :key="item.id">
           <div class="lists-item">
-            <img :src="item.proSrc" alt="" />
+            <img :src="item.imgUrl" alt="" />
             <div class="item-center">
-              <h3>{{ item.title }}</h3>
+              <h3>{{ item.city }}</h3>
               <i></i>
               <p>{{ item.message }}</p>
             </div>
@@ -25,7 +25,7 @@ import { swiper, swiperSlide } from "vue-awesome-swiper";
 export default {
   name: "SellList",
   props: {
-    proList: Array,
+    hotList: Array,
   },
   data() {
     return {

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <list v-for="item in prolist" :key="item.id">
+    <list v-for="item in hotList" :key="item.id">
       <!-- 列标图片 -->
       <template v-slot:list-img>
         <list-img>
@@ -29,7 +29,7 @@ import ListItem from "components/common/list/ListItem.vue";
 export default {
   name: "RecommendList",
   props: {
-    prolist: Array,
+    hotList: Array,
   },
   components: {
     List,

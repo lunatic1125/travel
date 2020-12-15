@@ -1,13 +1,15 @@
 <template>
   <div class="home">
     <home-navbar></home-navbar>
-    <router-link to="/city">
+    <router-link to="/tag">
       <search-btn></search-btn>
     </router-link>
     <banner :banners="banners"></banner>
     <icons :iconList="iconList"></icons>
-    <sell-list :proList="proList"></sell-list>
-    <recommend :recomlist="recomlist"></recommend>
+    <sell-list :hotList="hotList"></sell-list>
+    <recommend :recomlist="recomlist">
+      <recommend-list :hotList="recomlist"></recommend-list>
+    </recommend>
     <end></end>
   </div>
 </template>
@@ -19,6 +21,7 @@ import Banner from "./components/Banner";
 import Icons from "./components/Icons";
 import SellList from "./components/SellList";
 import Recommend from "./components/Recommend.vue";
+import RecommendList from "components/content/RecommendList.vue";
 import End from "../../components/content/End.vue";
 import { request } from "../../network/request";
 // import axios from "axios";
@@ -32,13 +35,14 @@ export default {
     Icons,
     SellList,
     Recommend,
+    RecommendList,
     End,
   },
   data() {
     return {
       banners: [],
       iconList: [],
-      proList: [],
+      hotList: [],
       recomlist: [],
     };
   },
@@ -58,7 +62,7 @@ export default {
         const data = res.data;
         this.banners = data.banners;
         this.iconList = data.iconList;
-        this.proList = data.proList;
+        this.hotList = data.hotList;
         this.recomlist = data.recomlist;
       }
     });

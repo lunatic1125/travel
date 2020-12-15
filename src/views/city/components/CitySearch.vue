@@ -1,8 +1,7 @@
 <template>
-  <div>
-    <div class="search-city">
+  <div class="city-search">
+    <div class="city-item">
       <input type="text" v-model="keyword" placeholder="搜索目的地/攻略" />
-      <!-- <button class="iconfont">&#xe60f;</button> -->
     </div>
     <div class="search-content" ref="wrapper" v-show="keyword">
       <ul class="search-keyword">
@@ -36,8 +35,7 @@ export default {
   methods: {
     changeCity(city) {
       this.$store.commit("changeCity", city);
-      this.keyword = "";
-      return;
+      this.$router.push("/home");
     },
   },
   computed: {
@@ -79,39 +77,30 @@ export default {
 </script>
 
 <style>
-.search-city {
+.city-search {
+  height: 40px;
+  padding: 0 0.94rem 0.44rem;
+  background-color: #fff;
+}
+.city-item {
   position: relative;
   overflow: hidden;
   /* 搜索框60px */
   height: 1.88rem;
-  margin: 0 0.94rem 0.44rem;
-
-  font-size: 0.88rem;
-  text-align: center;
-  line-height: 1.88rem;
-
   border-radius: 0.94rem;
   background-color: #f5f6fa;
   z-index: 6;
 }
-.search-city input {
+.city-item input {
   position: absolute;
   top: 2px;
   left: 8px;
-  width: 280px;
+  width: 100%;
   padding: 0 0.63rem;
   height: 1.63rem;
   text-align: center;
   background-color: transparent;
 }
-/* .search-city button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 6px 16px;
-  background-color: var(--color-tink);
-  color: #fff;
-} */
 .search-content {
   overflow: hidden;
   position: absolute;

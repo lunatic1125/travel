@@ -18,8 +18,9 @@ export default {
 <style>
 .list-img {
   float: left;
-  width: 8.13rem;
-  height: 6.81rem;
+  width: 140px;
+  height: 100px;
+  overflow: hidden;
 }
 .list-img img {
   width: 100%;

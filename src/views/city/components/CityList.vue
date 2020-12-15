@@ -63,7 +63,7 @@ export default {
     },
     changeCity(city) {
       this.$store.commit("changeCity", city);
-      this.scroll.scrollToElement(0);
+      this.$router.push("/home");
     },
   },
   mounted() {
@@ -79,7 +79,7 @@ export default {
   overflow: hidden;
   padding: 0 0.94rem;
   position: absolute;
-  top: 5rem;
+  top: 5.25rem;
   left: 0;
   right: 0;
   bottom: 0;
@@ -102,7 +102,7 @@ export default {
   margin: 0.25rem 0.63rem 0.25rem 0;
   padding: 0.25rem 1.25rem;
   font-size: 0.88rem;
-  border-radius: 0.69rem;
+  border-radius: 0.25rem;
   background-color: #f5f6fa;
 }
 .history .active {

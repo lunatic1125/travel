@@ -30,20 +30,21 @@ export default {
 .list-item {
   float: left;
   width: 12.44rem;
-  padding: 0.63rem;
+  padding: 0 0.5rem;
 }
 .list-item h4 {
   width: 10rem;
-  padding-bottom: 0.44rem;
+  line-height: 1.88rem;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 15px;
 }
 .list-item p {
   width: 11.88rem;
   margin-bottom: 0.5rem;
-  font-size: 12px;
-  line-height: 1.19rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
   color: #666;
   /* 多行文字溢出省略显示 */
   overflow: hidden;
@@ -54,7 +55,7 @@ export default {
 }
 .list-item span {
   font-size: 0.69rem;
-  padding: 2px 6px;
+  padding: 0.13rem 0.38rem;
   color: #fff;
   background-color: var(--color-tink);
   border-radius: 0.25rem;
