@@ -90,6 +90,7 @@ export default {
   left: 8px;
   width: 100%;
   padding: 0 0.63rem;
+  color: #666;
   height: 1.63rem;
   text-align: center;
   background-color: transparent;

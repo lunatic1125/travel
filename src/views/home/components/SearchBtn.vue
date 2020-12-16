@@ -1,9 +1,6 @@
 <template>
   <div class="search-btn">
-    <div>
-      <i class="iconfont">&#xe60f;</i>
-      <span>搜索目的地/攻略</span>
-    </div>
+    <div><i class="iconfont">&#xe60f; </i><span>极地探索冰岛十日游</span></div>
   </div>
 </template>
 
@@ -18,12 +15,10 @@ export default {
   /* 搜索框60px */
   height: 1.88rem;
   margin: 0 0.94rem 0.44rem;
-
-  font-size: 0.88rem;
+  font-size: 0.81rem;
   text-align: center;
+  color: #999;
   line-height: 1.88rem;
-  color: #b3b3b3;
-
   border-radius: 0.94rem;
   background-color: #f5f6fa;
 }

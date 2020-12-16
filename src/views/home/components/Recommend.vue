@@ -4,18 +4,20 @@
       <span>推荐</span>
       <span>附近</span>
     </div>
-    <slot></slot>
+    <list :prolist="hotList"></list>
   </div>
 </template>
 
 <script>
+import List from "components/common/list/List.vue";
 export default {
   name: "Recommend",
+  components: {
+    List,
+  },
   props: {
     recomlist: Array,
-  },
-  data() {
-    return {};
+    hotList: Array,
   },
 };
 </script>

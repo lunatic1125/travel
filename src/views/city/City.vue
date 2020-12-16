@@ -39,7 +39,9 @@ export default {
   },
   methods: {
     getCityInfo() {
-      request({ url: "/api/china-city-list.json" }).then((res) => {
+      request({
+        url: "/api/china-city-list.json",
+      }).then((res) => {
         res = res.data;
         if (res.ret && res.data) {
           const data = res.data;
