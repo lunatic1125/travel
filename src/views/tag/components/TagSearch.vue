@@ -1,35 +1,61 @@
 <template>
   <div class="tag-search">
     <div class="tag-city">
-      <input type="text" placeholder="搜索目的地/攻略" v-model="newTagInfo" />
+      <input
+        ref="tag"
+        type="text"
+        placeholder="搜索目的地/攻略"
+        v-model="tagSinfo"
+      />
     </div>
-    <div class="tag-content" v-show="showTagInfo">
-      <slot></slot>
+    <div class="tag-content" v-show="isShow">
+      <tag-recommend :taglist="taglist" :tagSinfo="tagSinfo"></tag-recommend>
     </div>
   </div>
 </template>
 
 <script>
 import BScroll from "better-scroll";
+import TagRecommend from "./TagRecommend.vue";
 
 export default {
   name: "TagSearch",
+  components: { TagRecommend },
   props: {
-    tagInfo: "",
+    taglist: Array,
   },
   data() {
     return {
-      newTagInfo: "",
+      tagSinfo: "",
     };
   },
   watch: {
-    tagInfo() {
-      this.newTagInfo = this.tagInfo;
-    },
+    // tagSinfo() {
+    //   if (this.$store.state.taginfo) {
+    //     this.tagSinfo = "this.$store.state.taginfo";
+    //     this.$store.commit("tagListChange", "");
+    //   }
+    // },
   },
+  updated() {
+    if (this.$store.state.taginfo) {
+      this.tagSinfo = this.$store.state.taginfo;
+      this.$store.commit("tagListChange", "");
+    }
+  },
+  methods: {},
   computed: {
-    showTagInfo() {
-      return this.newTagInfo.length;
+    storeinfo() {
+      if (this.$store.state.taginfo) {
+        return this.$store.state.taginfo;
+      }
+    },
+    isShow() {
+      if (this.tagSinfo || this.$store.state.taginfo) {
+        return true;
+      } else {
+        return false;
+      }
     },
   },
 };

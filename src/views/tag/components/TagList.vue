@@ -7,11 +7,11 @@
         <div class="history">
           <span
             class="active"
-            v-for="item in taglist"
-            :key="item.tag"
-            @click="tagChange(item.tag)"
+            v-for="item in labelList"
+            :key="item"
+            @click="tagListChange"
           >
-            {{ item.tag }}</span
+            {{ item }}</span
           >
         </div>
       </div>
@@ -25,9 +25,22 @@ export default {
   props: {
     taglist: Array,
   },
+  computed: {
+    labelList() {
+      let arr = [];
+      this.taglist.forEach((item) => {
+        item.label.forEach((i) => {
+          if (arr.indexOf(i) == -1) {
+            arr.push(i);
+          }
+        });
+      });
+      return arr;
+    },
+  },
   methods: {
-    tagChange(info) {
-      this.$emit("tagChange", info);
+    tagListChange(e) {
+      this.$store.commit("tagListChange", e.target.innerText);
     },
   },
 };

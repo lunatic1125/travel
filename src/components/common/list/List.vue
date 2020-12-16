@@ -16,7 +16,7 @@ export default {
 .list {
   position: relative;
   height: 100px;
-  margin-bottom: 0.63rem;
+  margin: 0.63rem 0;
   border-radius: 0.25rem;
   overflow: hidden;
   box-shadow: 0 0.06rem 0.25rem rgba(0, 0, 0, 0.08);
