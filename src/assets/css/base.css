@@ -8,8 +8,12 @@
 
 :root {
   --color-text:#333;
+  --color-text-p:#666;
+  --color-text-s:#999;
   --color-hign-text:#ffbd26;
   --color-tink:#46cdcf;
+  --color-border:#e5e5e5;
+  --color-bg-gay:#f5f6fa;
   --color-background:#fff;
   --font-size:14px;
   --line-height:1.5;
@@ -89,6 +93,26 @@ s,i,em{font-style:normal;text-decoration:none;}
 .font16{ font-size: 16px;}
 
 /*公共部分*/
+.tagTyle{
+    font-size: 0.69rem;
+    padding: 0.13rem 0.38rem;
+    color: #fff;
+    background-color: var(--color-tink);
+    border-radius: 0.25rem;
+    margin-right: 0.31rem;
+}
+
+/* 价钱样式 */
+.price {
+    float: right;
+    color: var(--color-hign-text);
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+  .price::before {
+    content: "￥";
+    font-size: 0.75rem;
+  }
 /*头部导航开始*/
 
 

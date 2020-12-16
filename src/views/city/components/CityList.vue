@@ -103,7 +103,7 @@ export default {
   padding: 0.25rem 1.25rem;
   font-size: 0.88rem;
   border-radius: 0.25rem;
-  background-color: #f5f6fa;
+  background-color: var(--color-bg-gay);
 }
 .history .active {
   background-color: var(--color-tink);
@@ -112,6 +112,6 @@ export default {
 .letter-list li {
   font-size: 0.88rem;
   line-height: 1.88rem;
-  border-bottom: 0.06rem solid #e6e6e6;
+  border-bottom: 0.06rem solid var(--color-border);
 }
 </style>

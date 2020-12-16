@@ -17,7 +17,7 @@
       <div class="list-item">
         <h4>{{ item.title }}</h4>
         <p>{{ item.desc }}</p>
-        <span>查看详情</span>
+        <span class="tagTyle">查看详情</span>
         <div class="price">{{ item.price }}</div>
       </div>
     </router-link>
@@ -92,7 +92,7 @@ export default {
   margin-bottom: 0.5rem;
   font-size: 0.75rem;
   line-height: 1rem;
-  color: #666;
+  color: var(--color-text-p);
   /* 多行文字溢出省略显示 */
   overflow: hidden;
   text-overflow: ellipsis;
@@ -100,16 +100,7 @@ export default {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-.list-item span {
-  font-size: 0.69rem;
-  padding: 0.13rem 0.38rem;
-  color: #fff;
-  background-color: var(--color-tink);
-  border-radius: 0.25rem;
-  margin-right: 0.31rem;
-}
-.price {
-  /* display: inline-block; */
+/* .price {
   float: right;
   color: var(--color-hign-text);
   font-size: 1.25rem;
@@ -118,5 +109,5 @@ export default {
 .price::before {
   content: "￥";
   font-size: 0.75rem;
-}
+} */
 </style>

@@ -18,7 +18,7 @@ export default {
 };
 </script>
 
-<style >
+<style scoped>
 .navbar {
   display: flex;
   justify-content: space-between;

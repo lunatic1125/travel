@@ -1,24 +1,26 @@
 <template>
-  <div class="navbar-item">
-    <div class="item-left iconfont">
-      <slot name="left"></slot>
-    </div>
-    <div class="item-center">
-      <slot name="center"></slot>
-    </div>
-    <div class="item-right iconfont">
-      <slot name="right"></slot>
+  <div class="navbar">
+    <div class="navbar-item">
+      <div class="item-left iconfont"><span>&#xe622;</span></div>
+      <div class="item-center">风光摄影</div>
+      <div class="item-right iconfont"><span>&#xe618;</span></div>
     </div>
   </div>
 </template>
-
 <script>
 export default {
-  name: "NavbarItem",
+  name: "ProNavbar",
 };
 </script>
 
 <style scoped>
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 2.75rem;
+  /* 内边距5px */
+  padding: 0 0.31rem;
+}
 .navbar-item {
   width: 100%;
   display: flex;

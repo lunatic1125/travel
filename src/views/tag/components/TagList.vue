@@ -74,7 +74,6 @@ export default {
   margin: 0.25rem;
   font-size: 0.88rem;
   line-height: 1.88rem;
-  color: #666;
   /* background-color: #f5f6fa; */
 }
 .history span:nth-child(even) {

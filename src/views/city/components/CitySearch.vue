@@ -88,7 +88,7 @@ export default {
   /* 搜索框60px */
   height: 1.88rem;
   border-radius: 0.94rem;
-  background-color: #f5f6fa;
+  background-color: var(--color-bg-gay);
   z-index: 6;
 }
 .city-item input {
