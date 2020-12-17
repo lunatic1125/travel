@@ -1,50 +1,86 @@
 <template>
-  <div class="navbar">
-    <div class="navbar-item">
-      <div class="item-left iconfont"><span>&#xe622;</span></div>
-      <div class="item-center">风光摄影</div>
-      <div class="item-right iconfont"><span>&#xe618;</span></div>
-    </div>
+  <div class="pronavbar">
+    <navbar class="pro-t" v-show="upShow">
+      <navbar-item>
+        <template v-slot:left><span class="circle">&#xe622;</span></template>
+        <template v-slot:center></template>
+        <template v-slot:right><span class="circle">&#xe618;</span></template>
+      </navbar-item>
+    </navbar>
+    <navbar
+      class="pro-t scrollShow shadow"
+      v-show="!upShow"
+      :style="handelShowStyle"
+    >
+      <navbar-item>
+        <template v-slot:left><span>&#xe622;</span></template>
+        <template v-slot:center>塞班岛3日自由行</template>
+        <template v-slot:right><span>&#xe60d;</span></template>
+      </navbar-item>
+    </navbar>
+    <img :src="proname.imgUrl" />
   </div>
 </template>
 <script>
+import Navbar from "components/common/navbar/Navbar.vue";
+import NavbarItem from "components/common/navbar/NavbarItem.vue";
 export default {
   name: "ProNavbar",
+  components: {
+    Navbar,
+    NavbarItem,
+  },
+  props: { proname: Object },
+  data() {
+    return {
+      upShow: true,
+      handelShowStyle: {
+        opacity: 0,
+      },
+    };
+  },
+  methods: {
+    prohandelscroll() {
+      const top = document.documentElement.scrollTop;
+      if (top > 70) {
+        let opacity = top / 120;
+        opacity = opacity > 1 ? 1 : opacity;
+        this.handelShowStyle = {
+          opacity: opacity,
+        };
+
+        this.upShow = false;
+      } else {
+        this.upShow = true;
+      }
+    },
+  },
+  activated() {
+    // 全局事件解绑，不要影响其他页面
+    window.addEventListener("scroll", this.prohandelscroll);
+  },
+  deactivated() {
+    window.removeEventListener("scroll", this.prohandelscroll);
+  },
 };
 </script>
 
 <style scoped>
-.navbar {
+.pronavbar img {
+  width: 100%;
+}
+.pro-t {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
-  height: 2.75rem;
-  /* 内边距5px */
-  padding: 0 0.31rem;
+  color: #fff;
+  z-index: 88;
 }
-.navbar-item {
-  width: 100%;
-  display: flex;
-}
-.item-left,
-.item-right {
-  width: 7.5rem;
-  /* icon大小44px */
-  font-size: 1.38rem;
-  line-height: 2.75rem;
-}
-.item-right {
-  text-align: right;
-}
-.item-right span,
-.item-left span {
-  padding: 0.63rem;
-}
-.item-center {
-  flex: 1;
-  /* 导航栏文字36-38px */
-  margin: 0;
-  font-size: 1.06rem;
-  text-align: center;
-  line-height: 2.75rem;
+.scrollShow {
+  background-color: #fff;
+  color: var(--color-text);
 }
 </style>

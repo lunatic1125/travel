@@ -100,14 +100,4 @@ export default {
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
 }
-/* .price {
-  float: right;
-  color: var(--color-hign-text);
-  font-size: 1.25rem;
-  font-weight: 600;
-}
-.price::before {
-  content: "￥";
-  font-size: 0.75rem;
-} */
 </style>

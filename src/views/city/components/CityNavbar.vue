@@ -3,9 +3,7 @@
     <navbar>
       <navbar-item>
         <template v-slot:left>
-          <router-link to="/home">
-            <span>&#xe622;</span>
-          </router-link>
+          <router-link to="/home" tag="span">&#xe622;</router-link>
         </template>
         <template v-slot:center>城市选择</template>
       </navbar-item>

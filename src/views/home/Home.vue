@@ -57,11 +57,6 @@ export default {
         }
       });
     },
-    // getHomeInfo() {
-    //   axios.get("/api/index.json").then((res) => {
-    //     console.log(res);
-    //   });
-    // },
   },
   computed: {
     ...mapState(["city"]),

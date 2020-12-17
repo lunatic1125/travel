@@ -113,6 +113,20 @@ s,i,em{font-style:normal;text-decoration:none;}
     content: "￥";
     font-size: 0.75rem;
   }
+
+  /* 溢出显示省略号 */
+  .ellips {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .shadow{
+    box-shadow: 0 0.06rem 0.25rem rgba(0, 0, 0, 0.08);
+  }
+  .circle {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+  }
 /*头部导航开始*/
 
 
