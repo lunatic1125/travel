@@ -58,14 +58,14 @@ export default {
   },
   mounted() {
     this.getDetailJson();
+    // 页面渲染时保存当前id
+    this.currentId = this.$route.params.id;
   },
   activated() {
-    console.log(this.$route.params.id);
-    console.log();
-    // if (this.$route.params.id != this.$route.params.id) {
-    //   this.getDetailJson();
-    //   this.$route.params.id = this.$route.params.id;
-    // }
+    if (this.currentId != this.$route.params.id) {
+      this.getDetailJson();
+      this.currentId = this.$route.params.id;
+    }
   },
 };
 </script>

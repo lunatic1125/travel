@@ -2,9 +2,13 @@
   <div class="pronavbar">
     <navbar class="pro-t" v-show="upShow">
       <navbar-item>
-        <template v-slot:left><span class="circle">&#xe622;</span></template>
+        <template v-slot:left>
+          <router-link to="/" tag="span" class="circle">&#xe622;</router-link>
+        </template>
         <template v-slot:center></template>
-        <template v-slot:right><span class="circle">&#xe618;</span></template>
+        <template v-slot:right>
+          <router-link to="/" tag="span" class="circle">&#xe618;</router-link>
+        </template>
       </navbar-item>
     </navbar>
     <navbar
@@ -13,9 +17,13 @@
       :style="handelShowStyle"
     >
       <navbar-item>
-        <template v-slot:left><span>&#xe622;</span></template>
+        <template v-slot:left>
+          <router-link to="/" tag="span">&#xe622;</router-link>
+        </template>
         <template v-slot:center>塞班岛3日自由行</template>
-        <template v-slot:right><span>&#xe60d;</span></template>
+        <template v-slot:right>
+          <router-link to="/" tag="span">&#xe60d;</router-link>
+        </template>
       </navbar-item>
     </navbar>
     <img :src="proname.imgUrl" />
