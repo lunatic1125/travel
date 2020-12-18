@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <keep-alive>
+    <keep-alive exclude="Tag">
       <router-view />
     </keep-alive>
     <main-tabbar />
