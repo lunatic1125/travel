@@ -39,7 +39,7 @@
       <div>旅行家</div>
     </tabbar-item>
     <!-- 我的 -->
-    <tabbar-item path="/profile">
+    <tabbar-item path="/register">
       <template v-slot:item-icon>
         <img src="~assets/image/tabbar/profile@2x.png" alt="" />
       </template>

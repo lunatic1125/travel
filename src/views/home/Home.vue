@@ -9,10 +9,13 @@
     <sell-list :hotList="hotList"></sell-list>
     <recommend :recomlist="recomlist" :hotList="recomlist"> </recommend>
     <end></end>
+    <main-tabbar />
   </div>
 </template>
 
 <script>
+import MainTabbar from "components/content/MainTabbar.vue";
+
 import HomeNavbar from "./components/HomeNavbar";
 import SearchBtn from "./components/SearchBtn";
 import Banner from "./components/Banner";
@@ -26,6 +29,7 @@ import { mapState } from "vuex";
 export default {
   name: "Home",
   components: {
+    MainTabbar,
     HomeNavbar,
     SearchBtn,
     Banner,

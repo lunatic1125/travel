@@ -45,7 +45,7 @@ export default {
 <style scoped>
 .sell {
   width: 100%;
-  padding: 0 0.94rem 0.5rem;
+  padding: 0 0.94rem;
 }
 .sell-title {
   height: 2.38rem;

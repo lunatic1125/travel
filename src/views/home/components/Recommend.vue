@@ -1,7 +1,7 @@
 <template>
   <div class="recommend">
     <div class="recommend-title">
-      <span>推荐</span>
+      <span class="active">推荐</span>
       <span>附近</span>
     </div>
     <list :prolist="hotList"></list>
@@ -42,5 +42,8 @@ export default {
   font-size: 0.94rem;
   padding: 0.5rem;
   margin-right: 1.13rem;
+}
+.active {
+  color: var(--color-tink);
 }
 </style>

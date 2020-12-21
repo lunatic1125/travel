@@ -6,6 +6,11 @@ import store from './store'
 import fastClick from 'fastclick'
 // fastClick自带方法
 fastClick.attach(document.body)
+//Vant插件
+import Vant from 'vant';
+import 'vant/lib/index.css';
+Vue.use(Vant)
+Vue.prototype.$
 
 //swiper插件使用 
 import VueAwesomeSwiper from 'vue-awesome-swiper'

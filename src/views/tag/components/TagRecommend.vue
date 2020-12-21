@@ -8,9 +8,8 @@
 </template>
 
 <script>
-import List from "components/common/list/List.vue";
 import BScroll from "better-scroll";
-
+import List from "components/common/list/List.vue";
 export default {
   name: "RecommendList",
   components: {
