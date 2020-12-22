@@ -1,33 +1,17 @@
 <template>
   <div class="pinterest">
-    <div class="pinlist">
-      <img src="~assets/image/updata/1.png" />
+    <div
+      class="pinlist"
+      v-for="(item, index) in this.$store.state.travels"
+      :key="index"
+    >
+      <img :src="item.imgUrl" />
       <div class="pinbotm">
         <div class="head-pho">
-          <img src="~assets/image/updata/1.png" />
+          <img :src="item.headpho" />
         </div>
-        <h4>飞去热带の岛屿游泳</h4>
-        <p>6522已收藏</p>
-      </div>
-    </div>
-    <div class="pinlist">
-      <img src="~assets/image/updata/1.png" />
-      <div class="pinbotm">
-        <div class="head-pho">
-          <img src="~assets/image/updata/1.png" />
-        </div>
-        <h4>飞去热带の岛屿游泳</h4>
-        <p>6522已收藏</p>
-      </div>
-    </div>
-    <div class="pinlist">
-      <img src="~assets/image/updata/1.png" />
-      <div class="pinbotm">
-        <div class="head-pho">
-          <img src="~assets/image/updata/1.png" />
-        </div>
-        <h4>飞去热带の岛屿游泳</h4>
-        <p>6522已收藏</p>
+        <h4>{{ item.title }}</h4>
+        <p>{{ item.likes }}已收藏</p>
       </div>
     </div>
   </div>
@@ -42,12 +26,13 @@ export default {
 <style scoped>
 /* --------------------- */
 .pinterest {
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
   padding: 0 15px;
 }
 .pinlist {
+  float: left;
   width: 167px;
   border: 1px solid var(--color-border);
   border-radius: 6px;
@@ -76,7 +61,7 @@ export default {
   height: 40px;
   border-radius: 20px;
   overflow: hidden;
-  border: 2px solid #fff;
+  /* border: 2px solid #fff; */
 }
 .head-pho img {
   width: 100%;

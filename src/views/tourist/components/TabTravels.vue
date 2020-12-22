@@ -1,10 +1,19 @@
 <template>
   <div class="tab-one">
     <div class="tab-t">
-      <router-link tag="div" to="/tourist/tab1" class="one-item active"
+      <router-link
+        tag="div"
+        to="/tourist/tab1"
+        class="one-item"
+        :class="{ active: isActive }"
         >游记
       </router-link>
-      <router-link tag="div" to="/tourist/tab2" class="one-item"
+      <router-link
+        tag="div"
+        to="/tourist/tab2"
+        class="one-item"
+        :class="{ active: !isActive }"
+        @click="switchBtn"
         >主页
       </router-link>
     </div>
@@ -15,6 +24,16 @@
 <script>
 export default {
   name: "TabTravels",
+  data() {
+    return {
+      isActive: true,
+    };
+  },
+  methods: {
+    switchBtn() {
+      console.log(11);
+    },
+  },
 };
 </script>
 

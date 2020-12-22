@@ -6,5 +6,8 @@ try {
 } catch (error) { }
 export default {
   city: defaultCity,
-  taginfo: ''
+  taginfo: '',
+  travels: [],
+  recommend: [],
+  mytravel: {}
 }
