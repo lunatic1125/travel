@@ -2,7 +2,7 @@
   <div class="tourist">
     <tourist-navbar />
     <tourist-banner />
-    <tour-tab-one />
+    <tab-travels />
     <main-tabbar />
   </div>
 </template>
@@ -11,10 +11,10 @@
 import MainTabbar from "components/content/MainTabbar.vue";
 import TouristNavbar from "./components/Navbar";
 import TouristBanner from "./components/Banner";
-import TourTabOne from "./components/TourTabOne.vue";
+import TabTravels from "./components/TabTravels.vue";
 
 export default {
-  components: { TouristNavbar, MainTabbar, TouristBanner, TourTabOne },
+  components: { TouristNavbar, MainTabbar, TouristBanner, TabTravels },
   name: "Tourist",
 };
 </script>
