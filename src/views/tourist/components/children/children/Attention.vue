@@ -5,25 +5,18 @@
       <span class="fr">更多</span>
     </div>
     <ul class="attlist">
-      <li class="liitem fl">
+      <li
+        class="liitem fl"
+        v-for="(item, index) in this.$store.state.recompeo"
+        :key="index"
+      >
         <i class="iconfont">&#xe611;</i>
-        <img class="lihead" src="~assets/image/updata/1.png" />
-        <p>Dinag</p>
-        <p><span>内容125</span><span> 粉丝268</span></p>
-        <div class="attbtn">关注</div>
-      </li>
-      <li class="liitem fl">
-        <i class="iconfont">&#xe611;</i>
-        <img class="lihead" src="~assets/image/updata/1.png" />
-        <p>Dinag</p>
-        <p><span>内容125</span><span> 粉丝268</span></p>
-        <div class="attbtn">关注</div>
-      </li>
-      <li class="liitem fl">
-        <i class="iconfont">&#xe611;</i>
-        <img class="lihead" src="~assets/image/updata/1.png" />
-        <p>Dinag</p>
-        <p><span>内容125</span><span> 粉丝268</span></p>
+        <img class="lihead" :src="item.headpho" />
+        <p>{{ item.name }}</p>
+        <p>
+          <span>内容{{ item.content }}</span
+          ><span> 粉丝{{ item.people }}</span>
+        </p>
         <div class="attbtn">关注</div>
       </li>
     </ul>
@@ -31,66 +24,25 @@
       <span class="t">推荐关注</span>
     </div>
     <ul class="att-recom">
-      <li class="recomlis">
+      <li
+        class="recomlis"
+        :key="index"
+        v-for="(item, index) in this.$store.state.recommend"
+      >
         <div class="recom-t clearfix">
           <i class="iconfont">&#xe611;</i>
-          <img class="lihead fl" src="~assets/image/updata/1.png" />
+          <img class="lihead fl" :src="item.headpho" />
           <div class="lihead-t fl">
-            <p class="ellips">DinagDinagDinag</p>
-            <span>12月22日</span>
+            <p class="ellips">{{ item.name }}</p>
+            <span>{{ item.travels["date"] }}</span>
           </div>
           <div class="attbtn fr">关注</div>
         </div>
         <div class="recom-img">
-          <img src="~assets/image/updata/1.png" />
+          <img :src="item.travels['imgUrl']" />
         </div>
-        <p class="recom-p ellips">
-          我想发的朋友圈，都在这篇游记里 —— 我想发的朋友圈，都在这篇游记里
-        </p>
-        <div class="recom-icons clearfix">
-          <span class="iconfont fl">&#xe618;</span>
-          <span class="iconfont fl">&#xe619;</span>
-          <span class="iconfont fr">&#xe61a;</span>
-        </div>
-      </li>
-      <li class="recomlis">
-        <div class="recom-t clearfix">
-          <i class="iconfont">&#xe611;</i>
-          <img class="lihead fl" src="~assets/image/updata/1.png" />
-          <div class="lihead-t fl">
-            <p class="ellips">DinagDinagDinag</p>
-            <span>12月22日</span>
-          </div>
-          <div class="attbtn fr">关注</div>
-        </div>
-        <div class="recom-img">
-          <img src="~assets/image/updata/1.png" />
-        </div>
-        <p class="recom-p ellips">
-          我想发的朋友圈，都在这篇游记里 —— 我想发的朋友圈，都在这篇游记里
-        </p>
-        <div class="recom-icons clearfix">
-          <span class="iconfont fl">&#xe618;</span>
-          <span class="iconfont fl">&#xe619;</span>
-          <span class="iconfont fr">&#xe61a;</span>
-        </div>
-      </li>
-      <li class="recomlis">
-        <div class="recom-t clearfix">
-          <i class="iconfont">&#xe611;</i>
-          <img class="lihead fl" src="~assets/image/updata/1.png" />
-          <div class="lihead-t fl">
-            <p class="ellips">DinagDinagDinag</p>
-            <span>12月22日</span>
-          </div>
-          <div class="attbtn fr">关注</div>
-        </div>
-        <div class="recom-img">
-          <img src="~assets/image/updata/1.png" />
-        </div>
-        <p class="recom-p ellips">
-          我想发的朋友圈，都在这篇游记里 —— 我想发的朋友圈，都在这篇游记里
-        </p>
+        <p class="recom-p ellips">{{ item.travels["p"] }}</p>
+        <!-- 操作图标 -->
         <div class="recom-icons clearfix">
           <span class="iconfont fl">&#xe618;</span>
           <span class="iconfont fl">&#xe619;</span>

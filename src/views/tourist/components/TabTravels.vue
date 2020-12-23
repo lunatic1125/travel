@@ -13,7 +13,6 @@
         to="/tourist/tab2"
         class="one-item"
         :class="{ active: !isActive }"
-        @click="switchBtn"
         >主页
       </router-link>
     </div>
@@ -26,12 +25,15 @@ export default {
   name: "TabTravels",
   data() {
     return {
-      isActive: true,
+      rute: "/tourist/tab1",
     };
   },
-  methods: {
-    switchBtn() {
-      console.log(11);
+  computed: {
+    isActive() {
+      if (this.$route.path != this.rute) {
+        return false;
+      }
+      return true;
     },
   },
 };

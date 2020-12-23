@@ -128,6 +128,8 @@ s,i,em{font-style:normal;text-decoration:none;}
     border-radius: 20px;
   }
 /*头部导航开始*/
-
+.activeColS {
+  color: var(--color-tink);
+}
 
 /*尾部部导航开始*/

@@ -39,8 +39,8 @@ export default {
   margin-bottom: 5px;
 }
 .prf-img img {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
 }
 .prf-h {
   font-size: 16px;

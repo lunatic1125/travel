@@ -1,16 +1,16 @@
 <template>
   <div>
     <div class="prf-item">
-      <router-link to="/tourist/tab2/write" tag="div" class="activeS">
-        <h4>3</h4>
+      <router-link to="/tourist/tab2/write" tag="div" class="activeColS">
+        <h4>{{ this.$store.state.mytravel.length }}</h4>
         <span>创作</span>
       </router-link>
       <router-link to="/tourist/tab2/attention" tag="div">
-        <h4>88</h4>
+        <h4>0</h4>
         <span>关注</span>
       </router-link>
       <router-link to="/tourist/tab2/fans" tag="div">
-        <h4>166</h4>
+        <h4>{{ this.$store.state.myfans.length }}</h4>
         <span>粉丝</span>
       </router-link>
     </div>
@@ -21,7 +21,6 @@
 <script>
 export default {
   name: "Tab2",
-  mounted() {},
 };
 </script>
 
@@ -40,8 +39,5 @@ export default {
 }
 .prf-item span {
   font-size: 12px;
-}
-.activeS {
-  color: var(--color-tink);
 }
 </style>

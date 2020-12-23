@@ -1,8 +1,8 @@
 <template>
   <div class="recommend">
     <div class="recommend-title">
-      <span class="active">推荐</span>
-      <span>附近</span>
+      <span>推荐</span>
+      <!-- <span>附近</span> -->
     </div>
     <list :prolist="hotList"></list>
   </div>

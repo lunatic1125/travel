@@ -16,6 +16,11 @@ export default {
   },
   getMytravel(state, obj) {
     state.mytravel = obj
-
+  },
+  getRecompeo(state, arr) {
+    state.recompeo = arr
+  },
+  getMyfans(state, arr) {
+    state.myfans = arr
   }
 }

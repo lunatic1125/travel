@@ -1,7 +1,7 @@
 <template>
   <div class="trip-recommend">
     <div class="trip-t">
-      <span class="activeS">按热度</span>
+      <span class="activeColS">按热度</span>
       <span>按主题</span>
       <span>按价格</span>
       <span>按时间</span>
@@ -35,8 +35,5 @@ export default {
   font-size: 0.94rem;
   padding: 0.5rem;
   margin-right: 1.13rem;
-}
-.activeS {
-  color: var(--color-tink);
 }
 </style>

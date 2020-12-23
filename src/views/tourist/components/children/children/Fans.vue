@@ -1,35 +1,15 @@
 <template>
   <div class="fans">
     <ul>
-      <li class="fans-lis clearfix">
-        <img class="fans-head fl" src="~assets/image/updata/1.png" />
+      <li
+        class="fans-lis clearfix"
+        v-for="(item, index) in this.$store.state.myfans"
+        :key="index"
+      >
+        <img class="fans-head fl" :src="item.headpho" />
         <div class="fans-t fl">
-          <p class="ellips">Adeline</p>
-          <span>内容125 粉丝268</span>
-        </div>
-        <div class="attbtn">关注</div>
-      </li>
-      <li class="fans-lis clearfix">
-        <img class="fans-head fl" src="~assets/image/updata/1.png" />
-        <div class="fans-t fl">
-          <p class="ellips">Adeline</p>
-          <span>内容125 粉丝268</span>
-        </div>
-        <div class="attbtn">关注</div>
-      </li>
-      <li class="fans-lis clearfix">
-        <img class="fans-head fl" src="~assets/image/updata/1.png" />
-        <div class="fans-t fl">
-          <p class="ellips">Adeline</p>
-          <span>内容125 粉丝268</span>
-        </div>
-        <div class="attbtn">关注</div>
-      </li>
-      <li class="fans-lis clearfix">
-        <img class="fans-head fl" src="~assets/image/updata/1.png" />
-        <div class="fans-t fl">
-          <p class="ellips">Adeline</p>
-          <span>内容125 粉丝268</span>
+          <p class="ellips">{{ item.name }}</p>
+          <span>内容{{ item.content }} 粉丝{{ item.people }}</span>
         </div>
         <div class="attbtn">关注</div>
       </li>

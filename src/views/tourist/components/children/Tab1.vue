@@ -2,7 +2,7 @@
   <div>
     <div class="tab-c">
       <div class="tab-c-t">
-        <span class="activeS">热门</span>
+        <span class="activeColS">热门</span>
         <span>最热</span>
       </div>
     </div>
@@ -41,8 +41,5 @@ export default {
   font-size: 0.94rem;
   padding: 0.5rem;
   margin-right: 1.13rem;
-}
-.activeS {
-  color: var(--color-tink);
 }
 </style>

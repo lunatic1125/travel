@@ -9,5 +9,7 @@ export default {
   taginfo: '',
   travels: [],
   recommend: [],
-  mytravel: {}
+  mytravel: {},
+  recompeo: [],
+  myfans: []
 }

@@ -37,7 +37,6 @@ export default {
         if (res.data && res.data) {
           const data = res.data;
           this.taglist = data.taglist;
-          console.log(this.taglist);
         }
       });
     },

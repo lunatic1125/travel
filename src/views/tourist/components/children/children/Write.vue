@@ -5,25 +5,15 @@
       <span class="fr">新增</span>
     </div>
     <div class="mytravel">
-      <div class="pinlist">
-        <img src="~assets/image/updata/1.png" />
+      <div
+        class="pinlist"
+        v-for="(item, index) in this.$store.state.mytravel"
+        :key="index"
+      >
+        <img :src="item.travels.imgUrl" />
         <div class="pinbotm clearfix">
-          <img class="head-pho" src="~assets/image/updata/1.png" />
-          <h4>小二蛋 <span class="iconfont fr">&#xe616;</span></h4>
-        </div>
-      </div>
-      <div class="pinlist">
-        <img src="~assets/image/updata/1.png" />
-        <div class="pinbotm clearfix">
-          <img class="head-pho" src="~assets/image/updata/1.png" />
-          <h4>小二蛋 <span class="iconfont fr">&#xe616;</span></h4>
-        </div>
-      </div>
-      <div class="pinlist">
-        <img src="~assets/image/updata/1.png" />
-        <div class="pinbotm clearfix">
-          <img class="head-pho" src="~assets/image/updata/1.png" />
-          <h4>小二蛋 <span class="iconfont fr">&#xe616;</span></h4>
+          <img class="head-pho" :src="item.headpho" />
+          <h4>{{ item.name }} <span class="iconfont fr">&#xe616;</span></h4>
         </div>
       </div>
     </div>
@@ -60,12 +50,9 @@ export default {
   font-size: 0.75rem;
 }
 /* -------------------- */
-.mytravel {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
+
 .pinlist {
+  float: left;
   width: 167px;
   border: 1px solid var(--color-border);
   border-radius: 6px;

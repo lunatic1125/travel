@@ -22,6 +22,8 @@ export default {
       travels: [],
       recommend: [],
       mytravel: {},
+      recompeo: [],
+      myfans: [],
     };
   },
   methods: {
@@ -33,9 +35,13 @@ export default {
           this.travels = data.travels;
           this.recommend = data.recommend;
           this.mytravel = data.mytravel;
+          this.recompeo = data.recompeo;
+          this.myfans = data.myfans;
           this.$store.commit("getTravels", this.travels);
           this.$store.commit("getRecommend", this.recommend);
           this.$store.commit("getMytravel", this.mytravel);
+          this.$store.commit("getRecompeo", this.recompeo);
+          this.$store.commit("getMyfans", this.myfans);
         }
       });
     },
