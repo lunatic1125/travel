@@ -10,6 +10,7 @@
         v-for="(item, index) in this.$store.state.mytravel"
         :key="index"
       >
+        <p class="list-t ellips">{{ item.travels.title }}</p>
         <img :src="item.travels.imgUrl" />
         <div class="pinbotm clearfix">
           <img class="head-pho" :src="item.headpho" />
@@ -52,6 +53,7 @@ export default {
 /* -------------------- */
 
 .pinlist {
+  position: relative;
   float: left;
   width: 167px;
   border: 1px solid var(--color-border);
@@ -64,6 +66,18 @@ export default {
 }
 .pinlist > img {
   width: 100%;
+}
+.list-t {
+  position: absolute;
+  bottom: 54px;
+  left: 0;
+  width: 100%;
+  height: 24px;
+  padding-left: 5px;
+  font-size: 13px;
+  line-height: 24px;
+  color: #fff;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
 }
 .pinbotm {
   width: 167px;

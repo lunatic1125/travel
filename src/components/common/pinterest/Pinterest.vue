@@ -69,12 +69,12 @@ export default {
 }
 .pinbotm h4 {
   padding-top: 15px;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 30px;
 }
 .pinbotm p {
   padding-bottom: 10px;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--color-text-s);
 }
 </style>

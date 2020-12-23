@@ -180,7 +180,7 @@ export default {
   width: 100%;
 }
 .recom-p {
-  font-size: 14px;
+  font-size: 13px;
   line-height: 34px;
   padding: 0 10px;
 }
